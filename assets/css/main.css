@@ -249,7 +249,7 @@
   }
 }
 .fitting-row__select input[type=checkbox]:checked {
-  background-image: url("/assets/images/checkmark.svg"); /* Путь к файлу */
+  background-image: url("../images/checkmark.svg"); /* Путь к файлу */
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
@@ -317,8 +317,8 @@
   width: 18px; /* Размер иконки */
   height: 18px;
   background-color: #3C3C3C; /* Цвет иконки */
-  mask-image: url("/assets/images/arrow-down.svg");
-  -webkit-mask-image: url("/assets/images/arrow-down.svg");
+  mask-image: url("../images/arrow-down.svg");
+  -webkit-mask-image: url("../images/arrow-down.svg");
   -webkit-mask-repeat: no-repeat;
           mask-repeat: no-repeat;
   -webkit-mask-size: contain;
@@ -387,8 +387,8 @@
   width: 18px; /* Размер иконки */
   height: 18px;
   background-color: #3C3C3C; /* Цвет иконки */
-  mask-image: url("/assets/images/trash.svg");
-  -webkit-mask-image: url("/assets/images/trash.svg");
+  mask-image: url("../images/trash.svg");
+  -webkit-mask-image: url("../images/trash.svg");
   -webkit-mask-repeat: no-repeat;
           mask-repeat: no-repeat;
   -webkit-mask-size: contain;
