@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fitting RVD</title>
+    <link rel="stylesheet" href="assets/css/main.css">
+</head>
+<body>
+    <div class="fit-container">
+        <!-- fitting filter -->
+        <div class="fitting-filter">
+            <div class="fitting-filter__wrapper">
+            <h1 class="fitting-title">Фитинги для РВД</h1>
+            <div class="fitting-buttons">
+                        <!-- 1 row -->
+                    <button class="filter-btn active fitting-filter__button" data-query="jis">
+                        <img class="fitting-filter__image" src="assets/images/fitting-btn/jis.png" alt="JIS">
+                        <p class="fitting-filter__title">JIS</p>
+                    </button>
+                    <button class="filter-btn fitting-filter__button" data-query="nptf">
+                        <img class="fitting-filter__image" src="assets/images/fitting-btn/nptf.png" alt="NPTF">
+                        <p class="fitting-filter__title">NPTF</p>
+                    </button>
+                    <button class="filter-btn fitting-filter__button" data-query="banjo">
+                        <img class="fitting-filter__image" src="assets/images/fitting-btn/banjo.png" alt="Banjo Metric">
+                        <p class="fitting-filter__title">BANJO Metric</p>
+                    </button>
+                    <button class="filter-btn fitting-filter__button" data-query="dki">
+                        <img class="fitting-filter__image" src="assets/images/fitting-btn/dki.png" alt="DKI">
+                        <p class="fitting-filter__title">DKI</p>
+                    </button>
+                    <button class="filter-btn fitting-filter__button" data-query="orfs">
+                        <img class="fitting-filter__image" src="assets/images/fitting-btn/orfs.png" alt="ORFS">
+                        <p class="fitting-filter__title">ORFS</p>
+                    </button>
+                    <button class="filter-btn fitting-filter__button" data-query="bsp">
+                        <img class="fitting-filter__image" src="assets/images/fitting-btn/bsp.png" alt="BSP">
+                        <p class="fitting-filter__title">BSP</p>
+                    </button>
+                    <!-- 2 row -->
+                    <button class="filter-btn fitting-filter__button" data-query="dkos">
+                        <img class="fitting-filter__image" src="assets/images/fitting-btn/dkos.png" alt="DKOS">
+                        <p class="fitting-filter__title">DKOS</p>
+                    </button>
+                    <button class="filter-btn fitting-filter__button" data-query="dkol">
+                        <img class="fitting-filter__image" src="assets/images/fitting-btn/dkol.png" alt="DKOL">
+                        <p class="fitting-filter__title">DKOL</p>
+                    </button>
+                    <button class="filter-btn fitting-filter__button" data-query="dk">
+                        <img class="fitting-filter__image" src="assets/images/fitting-btn/dk.png" alt="DK">
+                        <p class="fitting-filter__title">DK</p>
+                    </button>
+                    <button class="filter-btn fitting-filter__button" data-query="sf">
+                        <img class="fitting-filter__image" src="assets/images/fitting-btn/sf.png" alt="SF">
+                        <p class="fitting-filter__title">SF</p>
+                    </button>
+                    <button class="filter-btn fitting-filter__button" data-query="none">
+                        <img class="fitting-filter__image" src="assets/images/fitting-btn/муфта обжимная2.png" alt="Муфты обжимные">
+                        <p class="fitting-filter__title">Муфты <br> обжимные</p>
+                    </button>
+                    <button class="filter-btn fitting-filter__button" data-query="none">
+                        <img class="fitting-filter__image" src="assets/images/fitting-btn/Гидравлические БРС.png" alt="Гидравлические БРС">
+                        <p class="fitting-filter__title">Гидравлические БРС</p>
+                    </button>
+            </div>
+            <button class="show-more" id="showMore">Показать больше</button>
+            </div>
+        </div>
+
+        <!-- fit content -->
+        <div class="fitting-table" id="fitTable"> 
+            
+        </div>
+        <!-- end fit content -->
+    </div>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

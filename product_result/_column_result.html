@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Column Result</title>
+    <link rel="stylesheet" href="/assets/css/main.css">
+</head>
+<body>
+    <!-- Column -->
+    <div class="fit-container">
+        <div class="fit-content">   
+            <div class="fitting-result">
+                <div class="cl-4 fitting-table__header">
+                    <div class="fitting-table__header-wrapper">
+                        <div class="fitting-table__column fitting-table__column--name">Наименование</div>
+                        <div class="fitting-table__column fitting-table__column--spec">Тех. характеристики</div>
+                        <div class="fitting-table__column fitting-table__column--qty">Количество</div>
+                        <div class="fitting-table__column fitting-table__column--price">Цена</div>
+                    </div>
+                </div>
+                <div class="cl-3 fitting-table__header-mobile">
+                    <div class="fitting-table__header-wrapper-mobile">
+                        <span class="fitting-table__column-mobile">Наим.</span>
+                        <span class="fitting-table__column-mobile">Колич.</span>
+                        <span class="fitting-table__column-mobile">Цена</span>
+                    </div>
+                </div>
+                <div class="fitting-result__body">
+                    <!-- List Block -->
+                    <div class="selected-items" id="fitResult">
+                        <div class="fitting-row">
+                            <div class="fitting-row__wrapper">
+                                    <div class="fitting-row__name">Фитинг DK M39×2 (0°) Dy 25</div>
+                                    <!-- header details -->
+                                    <div class="fitting-details-header">
+                                        <span>Внутренний диаметр рукава, мм (Ду)</span>
+                                        <b>12 (1/2»)</b>
+                                    </div>
+                                    <!-- end header details -->
+                                    <div class="fitting-row__qty">
+                                        <button class="qty-btn minus">-</button>
+                                        <span class="qty-value">1</span>
+                                        <button class="qty-btn plus">+</button>
+                                    </div>
+                                    <div class="fitting-row__price">417 руб.</div>
+                                    <div class="fitting-row__delete">
+                                        <button class="delete-btn">Удалить</button>
+                                    </div>
+                            </div>
+                        </div>
+                        <div class="fitting-row">
+                            <div class="fitting-row__wrapper">
+                                    <div class="fitting-row__name">Фитинг DK M39×2 (0°) Dy 25</div>
+                                    <!-- header details -->
+                                    <div class="fitting-details-header">
+                                        <span>Внутренний диаметр рукава, мм (Ду)</span>
+                                        <b>12 (1/2»)</b>
+                                    </div>
+                                    <!-- end header details -->
+                                    <div class="fitting-row__qty">
+                                        <button class="qty-btn minus">-</button>
+                                        <span class="qty-value">1</span>
+                                        <button class="qty-btn plus">+</button>
+                                    </div>
+                                    <div class="fitting-row__price">417 руб.</div>
+                                    <div class="fitting-row__delete">
+                                        <button class="delete-btn">Удалить</button>
+                                    </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Sum Block -->
+                    <div class="fitting-summary">
+                        <span>Выбрано наименований: <strong><span id="selected-count">4</span> шт.</strong></span>
+                        <span>Общая сумма: <strong><span id="total-price">10 000</span> руб.</strong></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="fit-content">   
+</body>
+</html>

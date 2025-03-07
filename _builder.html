@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="assets/css/main.css">
+</head>
+<body>
+    
+    <div class="fit-container">
+        <!-- content -->
+        <div class="fit-content">
+            <!-- fitting table @render-->
+            <div class="fitting-table" id="fitTable">
+                <!-- desktop header @static -->
+                <div class="fitting-table__header">
+                    <div class="fitting-table__header-wrapper">
+                        <div class="fitting-table__column fitting-table__column--name">Наименование</div>
+                        <div class="fitting-table__column fitting-table__column--spec">Тех. характеристики</div>
+                        <div class="fitting-table__column fitting-table__column--qty">Количество</div>
+                        <div class="fitting-table__column fitting-table__column--price">Цена</div>
+                        <div class="fitting-table__column fitting-table__column--select">Выбрать</div>
+                    </div>
+                </div>
+                 <!-- mobile header @static -->
+                 <div class="fitting-table__header-mobile">
+                    <div class="fitting-table__header-wrapper-mobile">
+                        <span class="fitting-table__column-mobile">Наим./<br>Характ.</span>
+                        <span class="fitting-table__column-mobile">Цена</span>
+                        <span class="fitting-table__column-mobile">Выбрать</span>
+                    </div>
+                </div>
+                <!-- body @dynamic -->
+                <div class="fitting-table__body" id="app">
+                    <!-- ::first row:: -->
+                   
+                </div>
+            </div>
+            <!-- end table -->
+        </div>
+    </div>
+
+    <script>
+class Component {
+    constructor(tag, props = {}, children = []) {
+        this.tag = tag;
+        this.props = props;
+        this.children = children;
+    }
+
+    render() {
+        const element = document.createElement(this.tag);
+
+        Object.entries(this.props).forEach(([key, value]) => {
+            if (key.startsWith("on")) {
+                element.addEventListener(key.substring(2).toLowerCase(), value);
+            } else {
+                element.setAttribute(key, value);
+            }
+        });
+
+        this.children.forEach(child => {
+            if (child instanceof Component) {
+                element.appendChild(child.render());
+            } else {
+                element.appendChild(document.createTextNode(child));
+            }
+        });
+
+        return element;
+    }
+}
+
+class HTMLBuilder {
+    constructor(data) {
+        this.data = data;
+    }
+
+    build() {
+        return new Component("div", { class: "fitting-row" }, [
+            new Component("div", { class: "fitting-row__wrapper" }, [
+                new Component("div", { class: "fitting-row__name" }, [this.data.title]),
+                new Component("div", { class: "fitting-details-header" }, [
+                    new Component("span", {}, ["Внутренний диаметр рукава, мм (Ду) "]),
+                    new Component("b", {}, [this.data.teh_harakteristiki.split('\r\n/')[0].split(': ')[1]])
+                ]),
+                new Component("div", { class: "fitting-details hidden" }, [
+                    new Component("h4", { class: "fitting-table__column m-5 tablet" }, ["Тех. характеристики"]),
+                    ...this.data.teh_harakteristiki.split('\r\n').map(row => {
+                        const [label, value] = row.split(": ");
+                        return new Component("div", { class: "row" }, [
+                            new Component("span", {}, [label + ":"]),
+                            new Component("div", { class: "line" }),
+                            new Component("b", {}, [value])
+                        ]);
+                    })
+                ]),
+                new Component("div", { class: "fitting-row__qty" }, [
+                    new Component("button", { class: "qty-btn minus" }, ["-"]),
+                    new Component("span", { class: "qty-value" }, ["1"]),
+                    new Component("button", { class: "qty-btn plus" }, ["+"])
+                ]),
+                new Component("div", { class: "fitting-row__price" }, [`${this.data.price} руб.`]),
+                new Component("div", { class: "fitting-row__action" }, [
+                    new Component("div", { class: "fitting-row__select" }, [
+                        new Component("input", { type: "checkbox" })
+                    ]),
+                    new Component("button", { class: "details-btn" }, ["Подробнее"])
+                ])
+            ])
+        ]);
+    }
+}
+
+const jsonData = [
+  {
+    "title": "Фитинг DK M10x1 (0°) Dy 6",
+    "teh_harakteristiki": "Внутренний диаметр рукава, мм (Ду): 6 (1/4»)\r\nРазмер ключа S2: 14\r\nТип резьбы Е: M10x1",
+    "price": "63"
+  },
+  {
+    "title": "Фитинг DK M12x1.5 (0°) Dy 8",
+    "teh_harakteristiki": "Внутренний диаметр рукава, мм (Ду): 8 (5/16»)\r\nРазмер ключа S2: 17\r\nТип резьбы Е: M12x1.5",
+    "price": "75"
+  }
+];
+
+// Получаем контейнер для рендеринга
+const app = document.getElementById("app");
+
+// Перебираем массив JSON-объектов и создаем HTML-структуру
+jsonData.forEach(data => {
+  const builder = new HTMLBuilder(data);
+  const componentTree = builder.build();
+  app.appendChild(componentTree.render());
+});
+
+
+
+    </script>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

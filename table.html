@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table</title>
+    <link rel="stylesheet" href="assets/css/main.css">
+</head>
+<body>
+   <!-- container -->
+    <div class="fit-container">
+        <!-- content -->
+        <div class="fit-content">
+            <!-- fitting table @render-->
+            <div class="fitting-table" id="fitTable">
+                <!-- desktop header @static -->
+                <div class="fitting-table__header">
+                    <div class="fitting-table__header-wrapper">
+                        <div class="fitting-table__column fitting-table__column--name">Наименование</div>
+                        <div class="fitting-table__column fitting-table__column--spec">Тех. характеристики</div>
+                        <div class="fitting-table__column fitting-table__column--qty">Количество</div>
+                        <div class="fitting-table__column fitting-table__column--price">Цена</div>
+                        <div class="fitting-table__column fitting-table__column--select">Выбрать</div>
+                    </div>
+                </div>
+                 <!-- mobile header @static -->
+                 <div class="fitting-table__header-mobile">
+                    <div class="fitting-table__header-wrapper-mobile">
+                        <span class="fitting-table__column-mobile">Наим./<br>Характ.</span>
+                        <span class="fitting-table__column-mobile">Цена</span>
+                        <span class="fitting-table__column-mobile">Выбрать</span>
+                    </div>
+                </div>
+                <!-- body @dynamic -->
+                <div class="fitting-table__body" id="fittingsList">
+                </div>
+            </div>
+            <!-- end table -->
+        </div>
+    </div>
+    <!-- <button class="calculate-btn">Посчитать</button>
+    <div id="selected-items"></div> -->
+
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
