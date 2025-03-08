@@ -71,8 +71,7 @@
             </div>
         </div>
         <div class="fit-content">
-            
-            <!-- fitting table @render-->
+            <!-- table @render-->
             <div class="fitting-table">
                 <!-- desktop header @static -->
                 <div class="fitting-table__header">
@@ -96,10 +95,7 @@
                 <div class="fitting-table__body" id="fittingsList">
                 </div>
             </div>
-            <!-- end table -->
-
-
-            <!-- result -->
+            <!-- result @render -->
             <div class="fitting-result hidden">
                 <div class="cl-4 fitting-table__header">
                     <div class="fitting-table__header-wrapper">
@@ -127,9 +123,38 @@
                     </div>
                 </div>
             </div>
+            <!-- order -->
+            <div class="fitting-order">
+                <h2 class="fit-title fit-title-order">Форма заказа выбранных наименований</h2>
+                <form class="order-form" method="POST" novalidate data-js-form>
+                    <div class="order-form__inputs">
+                        <label>
+                            Ваш телефон
+                            <input type="tel" id="phone" class="order-form__input order-form__input--phone" name="phone" required>
+                            <span class="field-errors" id="phone-errors" data-js-form-field-errors></span>
+                        </label>
+                
+                        <label>
+                            Ваш Email
+                            <input type="email" id="email" class="order-form__input order-form__input--email" name="email" required>
+                            <span class="field-errors" id="email-errors" data-js-form-field-errors></span>
+                        </label>
+                    </div>
+                
+                    <div class="order-form__buttons">
+                        <button type="submit" class="order-form__button order-form__button--submit" id="fitOrder">Заказать</button>
+                        <button type="button" id="showSelectedItems">Показать выбранные товары</button>
+                        <span class="field-errors" id="selected-errors" data-js-form-field-errors></span>
+                    </div>
+                </form>                
+            </div>
         </div>
-        <button id="showSelectedItems">Показать выбранные товары</button>
+      
+        
+    </div>
+        
     <script src="assets/js/main.js"></script>
     <script src="assets/test/test.js"></script>
+    <script src="assets/test/validation.js"></script>
 </body>
 </html>
